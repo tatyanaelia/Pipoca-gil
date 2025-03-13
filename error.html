@@ -1,0 +1,44 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Externa com Erro</title>
+    <style>
+        #error-message {
+            color: red;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fetchData()">Buscar Dados</button>
+    <div id="result"></div>
+    <div id="error-message">
+        <p>Ocorreu um erro ao buscar os dados. <button onclick="fetchData()">Tentar novamente</button></p>
+    </div>
+
+    <script>
+        async function fetchData() {
+            const resultDiv = document.getElementById("result");
+            const errorDiv = document.getElementById("error-message");
+
+            resultDiv.innerHTML = "Carregando...";
+            errorDiv.style.display = "none"; 
+
+            try {
+                let response = await fetch("https://api.exemplo.com/dados"); // Substituir pela URL real
+                if (!response.ok) {
+                    throw new Error(`Erro ${response.status}: ${response.statusText}`);
+                }
+                let data = await response.json();
+                resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                resultDiv.innerHTML = "";
+                errorDiv.style.display = "block";
+                console.error("Erro na requisição:", error);
+            }
+        }
+    </script>
+</body>
+</html>

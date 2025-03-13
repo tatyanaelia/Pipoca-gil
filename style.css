@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    /*font-family: ;*/ 
+}
+
+body {
+    background-color: #941010;
+    color: #000 ;
+    font-size: 16px;
+    overflow: hidden;  
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* Altera para flexbox */
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    background-color: #fff; /* Fundo branco */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre as logos */
+}
+
+.logo-container .logopipoca {
+    width: 65px; /* Tamanho logo da pipoca */
+}
+
+.logo-container .logocoracao {
+    width: 65px; /* Tamanho logo do coração */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px; /* Espaço entre os itens */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+        background-image: url("./img/headerG.png");  /* Imagem triangulo vermelho + mão com coração */
+        background-size: cover;  /* Ajusta a imagem para cobrir toda a seção */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Evita que a imagem se repita */
+        height: 100vh;
+        position: relative;
+}
+
+.heartcare {
+    position: absolute;
+    top:25%; /* PRECISO ACHAR UMA FORMA DE ALINHAR EMBAIXO DO MENU */
+    left: 75%; /* 1/4 tela */
+    transform: translateX(-50%);
+    width: 600px; /* Ajuste conforme necessário */
+    height: auto; 
+    z-index: 2;
+}
+
+.conteudo {
+    position: absolute;
+    top: 50%; /* vertical */
+    left: 25%; /* horizontal */
+    transform: translate(-50%, -50%); /* Ajuste fino */
+    text-align: left;
+    max-width: 400px; /* largura máxima para quebra natural */
+}
+
+.chamada_maior {
+    font-family: "poppins";
+    color: #fff;
+    font-size: 2.5em;
+}
+
